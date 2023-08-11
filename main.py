@@ -7,8 +7,7 @@ config.read('config.txt')
 client_id = config['API']['client_id']
 client_secret = config['API']['client_secret']
 if client_id == '' :
-    print('Missing API')
-    sys.exit("Miss") #sys library
+    sys.exit("Missin API") #sys library
 
 api = Ossapi(client_id, client_secret)
 
