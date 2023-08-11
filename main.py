@@ -14,10 +14,8 @@ api = Ossapi(client_id, client_secret)
 #open list
 list = open("list.txt", "r")
 output = open("output.txt", "w")
-
+print("Processing...")
 #process
-total = len(list.readlines())
-print("Processing ",total," players")
 for X in list:
     X = X.strip('\n') #remove newline character
     user = api.user(X)
