@@ -15,3 +15,6 @@ Install using pip: pip install ossapi
 - Go to your Settings page (https://osu.ppy.sh/home/account/edit#oauth) and create a new OAuth application (or use one you already have)
 - Put your Client ID and Client Secret into config.txt.
 - Run the script and wait
+
+# Help/Bug/Improvement:
+- Message me on Discord @bcraftmg 
