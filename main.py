@@ -17,10 +17,9 @@ if os.path.isfile('config.txt') == 'True' :
     config.read('config.txt')
     client_id = config['API']['client_id']
     client_secret = config['API']['client_secret']
-
-if client_id == '' :
-    print('Missing API')
-    exit()
+    if client_id == '' :
+        print('Missing API')
+        exit()
 
 api = Ossapi(client_id, client_secret)
 
