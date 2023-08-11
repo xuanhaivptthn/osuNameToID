@@ -1,25 +1,14 @@
 from ossapi import Ossapi, UserLookupKey
+import configparser, os, sys
 
-#parse config
-import configparser
-import os
 config = configparser.ConfigParser()
-
-#check if config file exist in directory, create a template if not found
-if os.path.isfile('config.txt') == 'False' :
-    config['API'] = {'client_id': '',
-                     'client_secret': ''}
-    with open('config.txt', 'w') as configfile:
-        config.write(configfile)
-
 #read from config
-if os.path.isfile('config.txt') == 'True' :
-    config.read('config.txt')
-    client_id = config['API']['client_id']
-    client_secret = config['API']['client_secret']
-    if client_id == '' :
-        print('Missing API')
-        exit()
+config.read('config.txt')
+client_id = config['API']['client_id']
+client_secret = config['API']['client_secret']
+if client_id == '' :
+    print('Missing API')
+    sys.exit() #sys library
 
 api = Ossapi(client_id, client_secret)
 
