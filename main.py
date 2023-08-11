@@ -7,7 +7,7 @@ config.read('config.txt')
 client_id = config['API']['client_id']
 client_secret = config['API']['client_secret']
 if client_id == '' :
-    sys.exit("Missin API") #sys library
+    sys.exit("Missing API") #sys library
 
 api = Ossapi(client_id, client_secret)
 
@@ -16,7 +16,8 @@ list = open("list.txt", "r")
 output = open("output.txt", "w")
 
 #process
-print("Processing...")
+total = len(list.readlines())
+print("Processing ",total," players")
 for X in list:
     X = X.strip('\n') #remove newline character
     user = api.user(X)
